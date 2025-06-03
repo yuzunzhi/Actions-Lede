@@ -52,7 +52,7 @@ git_sparse_clone main https://github.com/sirpdboy/luci-app-lucky luci-app-lucky
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
 
 # Alist
-git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+#git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # DDNS.to
 #git_sparse_clone main https://github.com/linkease/nas-packages-luci luci/luci-app-ddnsto
@@ -69,46 +69,46 @@ git_sparse_clone main https://github.com/linkease/istore luci
 #chmod 755 package/luci-app-onliner/root/usr/share/onliner/setnlbw.sh
 
 # Themes
-git clone --depth=1 https://github.com/emxiong/luci-theme-argon package/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-git clone --depth=1 https://github.com/emxiong/luci-theme-design package/luci-theme-design
+#git clone --depth=1 https://github.com/emxiong/luci-theme-argon package/luci-theme-argon
+#git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+#git clone --depth=1 https://github.com/emxiong/luci-theme-design package/luci-theme-design
 
-if [ -d "package/luci-app-argon-config" ]; then
+#if [ -d "package/luci-app-argon-config" ]; then
   # 设置Argon主题的登录页面壁纸为内建
-  sed -i "s/option online_wallpaper 'bing'/option online_wallpaper 'none'/" package/luci-app-argon-config/root/etc/config/argon
-  sed -i "s/o\.default = 'bing';/o.default = 'none';/" package/luci-app-argon-config/htdocs/luci-static/resources/view/argon-config.js
+#  sed -i "s/option online_wallpaper 'bing'/option online_wallpaper 'none'/" package/luci-app-argon-config/root/etc/config/argon
+#  sed -i "s/o\.default = 'bing';/o.default = 'none';/" package/luci-app-argon-config/htdocs/luci-static/resources/view/argon-config.js
   # 设置Argon主题的登录表单模糊度
-  sed -i "s/option blur '[0-9]*'/option blur '0'/" package/luci-app-argon-config/root/etc/config/argon
-  sed -i "s/option blur_dark '[0-9]*'/option blur_dark '0'/" package/luci-app-argon-config/root/etc/config/argon
+#  sed -i "s/option blur '[0-9]*'/option blur '0'/" package/luci-app-argon-config/root/etc/config/argon
+#  sed -i "s/option blur_dark '[0-9]*'/option blur_dark '0'/" package/luci-app-argon-config/root/etc/config/argon
   # 设置Argon主题颜色
-  sed -i "s/option primary '#[0-9a-fA-F]\{6\}'/option primary '#ADD8E6'/" package/luci-app-argon-config/root/etc/config/argon
-  sed -i "s/option dark_primary '#[0-9a-fA-F]\{6\}'/option dark_primary '#c0c0c0'/" package/luci-app-argon-config/root/etc/config/argon
+#  sed -i "s/option primary '#[0-9a-fA-F]\{6\}'/option primary '#ADD8E6'/" package/luci-app-argon-config/root/etc/config/argon
+#  sed -i "s/option dark_primary '#[0-9a-fA-F]\{6\}'/option dark_primary '#c0c0c0'/" package/luci-app-argon-config/root/etc/config/argon
 
-  echo "Argon theme has been customized!"
-fi
+#  echo "Argon theme has been customized!"
+#fi
 # 更改 Argon 主题背景
 #cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 #修改默认主题
-sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
+#sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" $(find ./feeds/luci/collections/ -type f -name "Makefile")
 
 # 取消主题默认设置
 #find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
 # 修改默认IP
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/luci2/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/luci2/bin/config_generate
 
 # 更改默认 Shell 为 zsh
-sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
+#sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # TTYD 免登录
-sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
+#sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # x86 型号只显示 CPU 型号
-sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
+#sed -i 's/${g}.*/${a}${b}${c}${d}${e}${f}${hydrid}/g' package/lean/autocore/files/x86/autocore
 
 # 修改本地时间格式
-sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
+#sed -i 's/os.date()/os.date("%a %Y-%m-%d %H:%M:%S")/g' package/lean/autocore/files/*/index.htm
 
 # 修改主机名
 #sed -i "s/set system.@system\[-1\].hostname='LEDE'/set system.@system\[-1\].hostname='OpenWrt'/" package/base-files/luci2/bin/config_generate
