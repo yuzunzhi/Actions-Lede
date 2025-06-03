@@ -1,6 +1,7 @@
 name: X86_64 OpenWrt
 
 on:
+  workflow_dispatch:
   workflow_run:
     workflows: ["Delete Old Workflows"]
     types:
