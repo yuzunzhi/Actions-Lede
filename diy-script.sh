@@ -38,7 +38,7 @@ git clone --depth=1 https://github.com/fw876/helloworld package/luci-app-ssr-plu
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
-#git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 #lucky
 #git_sparse_clone main https://github.com/sirpdboy/luci-app-lucky lucky
@@ -59,8 +59,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 #git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
 
 # iStore
-#git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
-#git_sparse_clone main https://github.com/linkease/istore luci
+git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+git_sparse_clone main https://github.com/linkease/istore luci
 
 # 在线用户
 #git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
