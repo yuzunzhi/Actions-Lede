@@ -22,8 +22,8 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth=1 -b main https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
+#git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+#git clone --depth=1 -b main https://github.com/asvow/luci-app-tailscale package/luci-app-tailscale
 #git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
 #git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
 #git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
@@ -35,9 +35,9 @@ git clone --depth=1 -b main https://github.com/asvow/luci-app-tailscale package/
 
 # 科学上网插件
 git clone --depth=1 https://github.com/fw876/helloworld package/luci-app-ssr-plus
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 #lucky
@@ -49,7 +49,7 @@ git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclas
 #git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 
 # MosDNS
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
 
 # Alist
 #git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
@@ -59,8 +59,8 @@ git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mo
 #git_sparse_clone master https://github.com/linkease/nas-packages network/services/ddnsto
 
 # iStore
-git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
-git_sparse_clone main https://github.com/linkease/istore luci
+# git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+# git_sparse_clone main https://github.com/linkease/istore luci
 
 # 在线用户
 #git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
